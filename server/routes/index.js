@@ -1,9 +1,6 @@
-const express = require('express');
+const router = require('express').Router();
+const viewsRouter = require('./viewRoutes');
 
-const router = express.Router();
-
-router.get('/start', (req, res) => {
-  res.send('Start with passion and love 💛🔥');
-});
+router.use(viewsRouter);
 
 module.exports = router;

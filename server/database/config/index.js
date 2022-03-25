@@ -1,3 +1,3 @@
-const connection = require('./connection');
+const { pool } = require('./connection');
 
-module.exports = connection;
+module.exports = { pool };

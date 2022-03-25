@@ -14,9 +14,14 @@ if (nodeEnv === 'production') {
   throw new Error('DB_URL NOT FOUND!');
 }
 
-const connection = new Pool({
+const sql = {
   connectionString: DB_URL,
-  ssl: nodeEnv === 'production' ? { rejectUnauthorized: false } : false,
-});
+  ssl:
+    process.env.NODE_ENV === 'Production'
+      ? { rejectUnauthorized: false }
+      : false,
+};
 
-module.exports = connection;
+const pool = new Pool(sql);
+
+module.exports = { pool };

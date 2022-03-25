@@ -1,6 +1,6 @@
 const { getLoginPage, getSignupPage } = require('./views');
-const { signinController, signupController } = require('./apis');
-const createError = require('./errors');
+const { signinController, signupController, logoutController } = require('./apis');
+const { createError, clientError, serverError } = require('./errors');
 
 module.exports = {
   getLoginPage,
@@ -8,4 +8,7 @@ module.exports = {
   signinController,
   signupController,
   createError,
+  clientError,
+  serverError,
+  logoutController,
 };

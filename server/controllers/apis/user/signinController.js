@@ -36,7 +36,7 @@ const signupController = (req, res, next) => {
       res
         .cookie('access_token', token, { httpOnly: true })
         .status(200)
-        .json({ message: 'Login successfully' });
+        .json({ message: 'Login successfully', status: 200 });
     })
     .catch((error) => {
       if (error.name === 'ValidationError') {

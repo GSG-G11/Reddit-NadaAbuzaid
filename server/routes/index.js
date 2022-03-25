@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const viewsRouter = require('./viewRoutes');
 const apisRouter = require('./apiRoutes');
-const { clientError, serverError } = require('../controllers/errors');
+const { clientError, serverError } = require('../controllers');
 
 router.use('/api/v1', apisRouter);
 router.use(viewsRouter);

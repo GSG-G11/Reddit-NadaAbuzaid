@@ -34,7 +34,7 @@ const signupController = (req, res, next) => {
     // Create token
     .then((data) => createToken(data.rows[0].id, email, username))
     // Set cookies
-    .then((token) => res.cookie('access_token', token, { httpOnly: true }).status(201).json({ message: 'Register successfully' }))
+    .then((token) => res.cookie('access_token', token, { httpOnly: true }).status(201).json({ message: 'Register successfully', status: 201 }))
     .catch((error) => {
       if (error.name === 'ValidationError') {
         const messages = error.details.map((err) => err.message);

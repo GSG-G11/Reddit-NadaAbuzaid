@@ -17,7 +17,7 @@ if (nodeEnv === 'production') {
 const sql = {
   connectionString: DB_URL,
   ssl:
-    process.env.NODE_ENV === 'Production'
+    process.env.NODE_ENV === 'production'
       ? { rejectUnauthorized: false }
       : false,
 };

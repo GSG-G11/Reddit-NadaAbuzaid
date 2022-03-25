@@ -1,7 +1,8 @@
 const apisRouter = require('express').Router();
 
-const { addUserController } = require('../controllers');
+const { signinController, signupController } = require('../controllers');
 
-apisRouter.post('/signup', addUserController);
+apisRouter.post('/signup', signupController);
+apisRouter.post('/signin', signinController);
 
 module.exports = apisRouter;

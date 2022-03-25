@@ -2,11 +2,11 @@ const {
   getUsersByEmailQuery,
   getUsersByUsernameQuery,
   addUserQuery,
-} = require('../../database');
-const { signupSchema, hashPassword, createToken } = require('../../utils');
-const { createError } = require('../errors');
+} = require('../../../database');
+const { signupSchema, hashPassword, createToken } = require('../../../utils');
+const { createError } = require('../../errors');
 
-const addUserController = (req, res, next) => {
+const signupController = (req, res, next) => {
   const { username, password, email } = req.body;
   // Validation
   signupSchema
@@ -32,9 +32,9 @@ const addUserController = (req, res, next) => {
     // Add user info to the database
     .then((hashedPassword) => addUserQuery(username, hashedPassword, email))
     // Create token
-    .then((data) => createToken({ id: data.rows[0].id, email }))
+    .then((data) => createToken(data.rows[0].id, email, username))
     // Set cookies
-    .then((token) => res.cookie('access_token', token, { httpOnly: true }).status(201).json({ message: 'sign up successfully' }))
+    .then((token) => res.cookie('access_token', token, { httpOnly: true }).status(201).json({ message: 'Register successfully' }))
     .catch((error) => {
       if (error.name === 'ValidationError') {
         const messages = error.details.map((err) => err.message);
@@ -45,4 +45,4 @@ const addUserController = (req, res, next) => {
     });
 };
 
-module.exports = addUserController;
+module.exports = signupController;

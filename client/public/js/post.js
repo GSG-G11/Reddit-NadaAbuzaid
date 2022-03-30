@@ -221,6 +221,7 @@ const addComment = (postId) => {
         }
       })
       .then(({ data }) => {
+        commentsContainer.innerHTML = '';
         getComments(data.post_id);
         Swal.fire({
           position: 'center',

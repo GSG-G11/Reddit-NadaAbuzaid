@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="https://d.top4top.io/p_22521ptn21.png" />
+  <!-- Alert Script -->
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- Style Page -->
+  <link rel="stylesheet" href="/css/splash.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+</head>
+<title>Reddit | Home Page</title>
+
+<body class="body">
+  <!-- 1. Start Header Section -->
+  <header class="header-section" id="header-section">
+    <!-- 1-1. Scroll Indicator -->
+    <div class="progress-container">
+      <div class="progress-bar" id="myBar"></div>
+    </div>
+
+    <!-- 1-2. Header Content -->
+    <div class="header">
+      <!-- 1-2-1 Logo Side -->
+      <div class="logo">
+        <a href="/"><img src="/images/logo-light.svg" alt="Logo Image" class="logo-img" /></a>
+      </div>
+
+      <!-- 1-2-2 User Side -->
+      <div class="center" id="user">
+        <img src="images/logo.svg" alt="Logo" class="user-icon">
+        <a id="userLink">
+          <p id="username"></p>
+        </a>
+        <i class="fas fa-sign-out" id="logoutBtn"></i>
+      </div>
+
+      <!-- 1-2-3 -->
+      <div class="buttons">
+        <button class="login-btn btn" id="loginBtn">Login</button>
+        <button class="join-btn btn" id="joinBtn">Join</button>
+      </div>
+
+    </div>
+  </header>
+  <!-- End Header Section -->
+
+  <!-- 2. Start Main Section -->
+  <main class="main center">
+    <div class="container">
+      <!-- 2-1 Posts Section -->
+      <section class="posts">
+
+        <!-- 2-1-1 Create post  -->
+        <div class="create-post">
+          <div class="img">
+            <img src="images/logo.svg" alt="Logo" class="user-icon">
+          </div>
+          <input type="text" class="post-input" placeholder="What's in your mind?" />
+          <button class="post-btn" id="post-btn">New Post</button>
+        </div>
+
+        <!-- 2-1-2 Posts-->
+        <p class="section-header">Posts</p>
+        <div class="post-container" id="post-container"></div>
+        <!-- ./post-container -->
+      </section>
+
+      <!-- 2-2 Sidebar Section -->
+      <section class="sidebar"></section>
+
+      <!-- 2-3 Create Post Modal -->
+
+      <!-- Add Modal Box Section - Post -->
+      <div class="modal" id="modal">
+        <div class="modal-header">
+          <p class="modal-title">Add your post</p>
+          <button class="close-btn">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form id="postForm" novalidate>
+            <input type="text" id="post-title" placeholder="Enter the post title" required />
+            <p id="postTitleErr" class="error"></p>
+            <i class="fas fa-exclamation-circle circle" id="circle1"></i>
+
+            <textarea id="post-content-input" rows="20" cols="50" placeholder="Enter the post here" required></textarea>
+            <p id="postContentErr" class="error"></p>
+            <i class="fas fa-exclamation-circle circle" id="circle2"></i>
+
+            <input id="createPostBtn" type="submit" value="Create Post" />
+          </form>
+        </div>
+      </div>
+
+      <!-- Overlay -->
+      <div id="overlay"></div>
+    </div>
+  </main>
+  <!-- End Main Section -->
+
+  <!-- Start Back To top Button -->
+  <div id="backToTopBtn" class="btn-scroll hide">
+    <i class="far fa-angle-up"></i>
+  </div>
+  <!-- End Back To top Button -->
+
+  <!-- Splash Screen -->
+
+  <span id="splash-overlay" class="splash"></span>
+  <span id="welcome" class="z-depth-4"></span>
+
+  <script src="/js/functions.js"></script>
+  <script src="/js/index.js"></script>
+</body>
+
+</html>

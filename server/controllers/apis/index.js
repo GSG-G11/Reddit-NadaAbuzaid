@@ -1,11 +1,34 @@
 const {
+  getPosts,
+  addPost,
+  getUserPosts,
+  addVotes,
+  getVotesController,
+  deletePost,
+  addCommentController,
+  getSpecificPostController,
+  getPostCommentsController,
+} = require('./posts');
+
+const {
   signupController,
   signinController,
   logoutController,
-} = require('./user');
+  userInfoHandler,
+} = require('./users');
 
 module.exports = {
-  signupController,
+  getPostCommentsController,
+  getSpecificPostController,
+  addCommentController,
+  getVotesController,
   signinController,
   logoutController,
+  signupController,
+  userInfoHandler,
+  getUserPosts,
+  deletePost,
+  getPosts,
+  addPost,
+  addVotes,
 };

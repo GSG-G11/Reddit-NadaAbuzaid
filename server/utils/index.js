@@ -1,6 +1,6 @@
 const { signupSchema, signinSchema } = require('./validation');
 const { hashPassword, comparePassword } = require('./password');
-const { createToken } = require('./promises');
+const { createToken, verifyPromise } = require('./promises');
 
 module.exports = {
   signupSchema,
@@ -8,4 +8,5 @@ module.exports = {
   hashPassword,
   comparePassword,
   createToken,
+  verifyPromise,
 };

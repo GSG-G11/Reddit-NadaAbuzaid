@@ -1,0 +1,616 @@
+/*
+      Table of content:
+       1- Fonts
+       2- Variables
+       3- General style
+       
+*/
+
+/* ----------------------------------------------------------------------------------- */
+/* ! 1. Import Fonts */
+
+/* ---- Montserrat ---- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700&display=swap');
+
+/* ---- Readex Pro ---- */
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@200;300;400;500;600;700&display=swap');
+
+/* ----------------------------------------------------------------------------------- */
+
+/* ! 2. Variables  */
+
+:root {
+  --white: #ffffff;
+  --main: #ff4500;
+  --background: #dae0e6;
+  --text: #000000;
+  --icon: #595959;
+  --sub-icon: #999da5;
+  --password-icon: #4070f4;
+  --vote: #f4f5f7;
+  --error: #e74c3c;
+  --active-background: #111317;
+  --black: #000000;
+}
+
+/* ----------------------------------------------------------------------------------- */
+
+/* ! General Style Start */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background);
+  z-index: 0;
+}
+
+/* ---- Scrollbar Style ---- */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--main);
+  border-radius: 50px;
+}
+
+::selection {
+  background-color: var(--main);
+  color: var(--white);
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#overlay {
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+}
+
+a {
+  text-decoration: none;
+}
+/* ! General Style End */
+
+/* ----------------------------------------------------------------------------------- */
+/* ! Header Section Style Start */
+
+.header-section {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: 3.7rem;
+  background-color: var(--white);
+}
+
+/* Scroll Indicator Style */
+.progress-container {
+  width: 100%;
+  height: 3px;
+  background: var(--icon);
+}
+
+.progress-bar {
+  height: 3px;
+  background: var(--main);
+  width: 0%;
+  border-radius: 0px 40px 40px 0;
+}
+
+/* Header Content Style */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo Style */
+.logo {
+  width: 20%;
+  height: 3.5rem;
+  margin-right: 4rem;
+}
+
+.logo-img {
+  width: 100%;
+  height: 3.5rem;
+}
+
+/* User Side Style */
+#user {
+  height: 3.5rem;
+  width: 25%;
+  margin-right: 2rem;
+}
+
+.user-icon {
+  fill: var(--white);
+  background-color: var(--background);
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50px;
+}
+
+#username {
+  margin-left: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.fa-sign-out {
+  margin-left: 40px;
+  cursor: pointer;
+}
+
+/* Buttons Section */
+.buttons {
+  height: 2.5rem;
+  width: 20%;
+  display: flex;
+  align-items: center;
+}
+
+.btn {
+  border: none;
+  background-color: var(--main);
+  color: var(--white);
+  width: 5rem;
+  height: 85%;
+  font-weight: bold;
+  font-size: 0.8rem;
+  border-radius: 5px;
+  margin-left: 0.6rem;
+  cursor: pointer;
+}
+
+.join-btn {
+  border: 1px solid var(--main);
+  background-color: var(--white);
+  color: var(--main);
+}
+
+.join-btn:hover {
+  border: none;
+  background-color: var(--main);
+  color: var(--white);
+}
+
+.login-btn:hover {
+  border: 1px solid var(--main);
+  background-color: var(--white);
+  color: var(--main);
+}
+
+/* ! Header Section Style End */
+
+/* ----------------------------------------------------------------------------------- */
+/* ! Main Section Style Start */
+.main {
+  width: 100%;
+  position: relative;
+  margin-top: 3.7rem;
+}
+
+.container {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  margin-top: 2rem;
+}
+
+/* Create Post Section Style */
+.posts {
+  width: 66.66%;
+  height: 100%;
+}
+
+.create-post {
+  height: 4rem;
+  background-color: var(--white);
+  display: flex;
+  align-items: center;
+  padding: 8px;
+}
+
+.img .user-icon {
+  margin-left: 0.6rem;
+  height: 2.2rem;
+  width: 2.2rem;
+}
+
+.user-icon-post {
+  height: 2.7rem;
+  width: 2.7rem;
+  margin-left: 0.5rem;
+}
+
+.post-input {
+  height: 2.5rem;
+  width: 80%;
+  margin-left: 0.7rem;
+  border: 1px solid var(--sub-icon);
+  background-color: var(--background);
+  opacity: 0.5;
+  padding: 0 0.7rem;
+  border-radius: 5px;
+}
+
+.post-btn::placeholder {
+  color: var(--);
+}
+
+.post-btn,
+input[type='submit'] {
+  border: none;
+  background-color: var(--main);
+  color: var(--white);
+  width: 5rem;
+  height: 85%;
+  font-weight: bold;
+  font-size: 0.8rem;
+  border-radius: 5px;
+  margin-left: 0.6rem;
+  cursor: pointer;
+}
+
+.post-btn:hover,
+input[type='submit']:hover {
+  background-color: #f35921;
+}
+
+/* Posts Container Section */
+.post-container {
+  margin-top: 1rem;
+}
+
+.section-header {
+  margin: 1rem 0;
+  font-size: 1.5rem;
+}
+
+.user-post {
+  background-color: var(--white);
+  display: flex;
+  margin-top: 1rem;
+}
+
+/*  Votes Side */
+.vote {
+  background-color: var(--vote);
+  width: 6%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.arrow {
+  font-size: 25px;
+  color: var(--sub-icon);
+  cursor: pointer;
+}
+
+/*  Post Side */
+.post-div {
+  max-width: 85%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.post-user {
+  margin: 0.8rem;
+  display: flex;
+  align-items: center;
+}
+
+a.username:hover,
+#username:hover {
+  color: var(--main);
+}
+
+.post-content {
+  padding-left: 1rem;
+  color: var(--text);
+  text-align: justify;
+}
+
+.post-title {
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+
+.post-desc {
+  font-size: 0.8rem;
+  width: 100%;
+  height: 4.45rem;
+  overflow: hidden;
+}
+
+.post-footer {
+  width: 100%;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+i.fa-plus-square,
+i.fa-minus-square {
+  color: var(--sub-icon);
+  font-size: 1.3rem;
+}
+
+.fa-comment-alt {
+  color: var(--sub-icon);
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+.comments-sec {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 12px;
+  margin-left: 12px;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.comments-sec:hover {
+  background-color: var(--vote);
+}
+
+.comment-label {
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+/* --------------------- Modal Box Style ----------------------*/
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 200ms ease-in-out;
+  border: 1px solid var(--active-background);
+  border-radius: 10px;
+  z-index: 10;
+  background-color: var(--white);
+  width: 635px;
+  max-width: 80%;
+  display: none;
+  padding: 20px 18px;
+}
+
+#modal.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--active-background);
+  margin-bottom: 5px;
+}
+
+.modal-title {
+  font-size: 25px;
+  font-weight: 600;
+  margin-left: 5px;
+}
+
+.modal-header .close-btn {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-weight: bold;
+  font-size: 30px;
+  margin: 0 25px;
+}
+
+input#post-title {
+  width: 95%;
+  height: 33px;
+  display: inline-block;
+  margin: 5px;
+  padding: 0.375rem 0.75rem;
+  border: 1px solid var(--background);
+  border-radius: 0.25rem;
+  line-height: 1.5;
+  height: 2.5rem;
+  position: relative;
+}
+
+::placeholder {
+  font-family: 'Montserrat', sans-serif;
+}
+
+#post-content-input,
+#comment-content-input {
+  width: 95%;
+  display: inline-block;
+  margin: 5px;
+  padding: 0.375rem 0.75rem;
+  border: 1px solid var(--background);
+  border-radius: 0.25rem;
+  line-height: 1.5;
+  height: 5.5rem;
+  position: relative;
+}
+
+input[type='submit'] {
+  border-radius: 5px;
+  background: var(--main);
+  border: none;
+  outline: none;
+  color: var(--white);
+  transition: 0.3s;
+  float: right;
+  width: 130px;
+  height: 35px;
+  font-size: 17px;
+  margin-right: 25px;
+  cursor: pointer;
+}
+
+.post-user .close-btn-post {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-weight: bold;
+  font-size: 30px;
+  margin: 0 25px;
+  position: absolute;
+  right: 500px;
+}
+
+/* Sidebar Style */
+.sidebar {
+  width: 33.33%;
+  height: 100%;
+}
+/* ! Main Section Style End */
+/* ----------------------------------------------------------------------------------- */
+/* ! Back To Top Button Style Start */
+
+.btn-scroll {
+  position: fixed;
+  right: 50px;
+  bottom: 30px;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--border);
+  background-color: var(--active-background);
+  z-index: 5;
+  cursor: pointer;
+}
+
+.fa-angle-up {
+  color: var(--white);
+  font-size: 1.5rem;
+}
+.hide {
+  display: none;
+}
+
+.show {
+  display: flex;
+}
+
+/* ! Back To Top Button Style End */
+/* ----------------------------------------------------------------------------------- */
+/* ! Alert Style Start */
+.btn-alert {
+  background-color: var(--main);
+  color: var(--white);
+  border: none;
+  outline: none;
+  font-weight: bold;
+  font-size: 0.8rem;
+  cursor: pointer;
+  padding: 0.8rem;
+  margin: 0 0.5rem;
+  border-radius: 5px;
+}
+
+.btn-success {
+  background-color: #3085d6;
+}
+
+.btn-danger {
+  background-color: #d9534f;
+}
+/* ! Alert Style End */
+/* ----------------------------------------------------------------------------------- */
+/* ! Error Style Start */
+i.circle {
+  position: absolute;
+  width: 50px;
+  line-height: 50px;
+  color: var(--error);
+  right: 29px;
+  font-size: 20px;
+  visibility: hidden;
+  top: 59px;
+}
+
+i#circle2 {
+  top: 109px;
+}
+
+.error {
+  color: var(--error);
+  margin-left: 6px;
+}
+
+#post-title.showErr,
+#post-content-input.showErr {
+  border: 1px solid var(--error);
+}
+
+/* ! Error Style End */
+/* ----------------------------------------------------------------------------------- */
+/* ! Comments Section Style Start */
+#modalComment {
+  transform: translate(-50%, -50%);
+  background-color: var(--white);
+  transition: 200ms ease-in-out;
+  border-radius: 10px;
+  padding: 20px 18px;
+  margin-top: 20px;
+  position: fixed;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 90%;
+  height: 80%;
+  top: 50%;
+  left: 50%;
+  overflow: auto;
+  z-index: 200;
+  display: none;
+}
+
+.post-comments {
+  background-color: var(--white);
+  height: 500px;
+  width: 100%;
+  display: none;
+}
+
+.comment-secton-header {
+  font-size: 0.9rem;
+  padding: 10px 0 10px 20px;
+}
+/* ! Comments Section Style End */

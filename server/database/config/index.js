@@ -1,3 +1,4 @@
+const dbBuild = require('./build');
 const { pool } = require('./connection');
 
-module.exports = { pool };
+module.exports = { pool, dbBuild };

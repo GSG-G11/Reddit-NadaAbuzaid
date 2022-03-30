@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://d.top4top.io/p_22521ptn21.png">
+    <!-- Style Page -->
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Reddit | Login</title>
+</head>
+
+<body>
+    <!-- Start Signin Form Section -->
+    <div class="container login" id="container">
+        <img src="images/logoMain.svg" alt="logo" class="main-img">
+        <div class="text">Login</div>
+        <form>
+            <div class="field">
+                <span class="fa fa-user"></span>
+                <input type="email" class="form-control" placeholder="Email address" id="email" required>
+                <i class="fas fa-exclamation-circle circle"></i>
+            </div>
+            <p class="error" id="emailErr"></p>
+            <div class="field">
+                <span class="fa fa-lock"></span>
+                <input type="password" class="form-control" id="password" placeholder="Password" required>
+                <i class="fas fa-eye-slash icon"></i>
+                <i class="fas fa-exclamation-circle circle"></i>
+            </div>
+            <p class="error" id="passErr"></p>
+
+            <button type="button" class="btn" id="loginBtn">Login</button>
+
+            <div class="new-account">
+                <p>Don't have an account? click <a href="/signup" class="here" id="newAccount">here</a></p>
+            </div>
+        </form>
+    </div>
+    <!-- End Signin Form Section -->
+    <script src="/js/functions.js"></script>
+    <script src="/js/signin.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>

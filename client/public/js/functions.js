@@ -161,6 +161,7 @@ const handleDom = (parent, owner, title, content, postId, user) => {
 
   const postFooter = document.createElement('div');
   postFooter.className = 'post-footer';
+  postFooter.id = 'postFooter';
 
   const avatar = document.createElement('img');
   avatar.src = '/images/logo.svg';

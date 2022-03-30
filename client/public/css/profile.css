@@ -44,3 +44,7 @@
   font-size: 1rem;
   font-weight: 400px;
 }
+
+.post-user .close-btn-post{
+  right: 100px;
+}

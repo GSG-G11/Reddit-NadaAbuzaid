@@ -9,8 +9,7 @@
          2-2 Fetch Signup Page
      3. Check cookies and render posts
          3-1 Check cookies
-         3-2 Votes function
-         3-3 Get posts
+         3-2 Get posts
      4. Onload
      5. Logout
 
@@ -90,42 +89,7 @@ const checkCookies = () => {
     .catch(console.log);
 };
 
-// 3-2 Votes function
-const votePosts = (voteType, postId) => {
-  const reqVote = {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-  };
-
-  fetch(`/api/v1/vote/${postId}/${voteType}`, reqVote)
-    .then((resp) => {
-      if (resp.status === 401) {
-        // eslint-disable-next-line no-undef
-        Swal.fire({
-          icon: 'error',
-          text: 'Kindly login to vote!',
-        });
-      } else if (resp.status === 200) {
-        if (voteType === 'up') {
-          document.getElementsByClassName(`up-${postId}`)[0].style.color =
-            '#ff4500';
-          document.getElementsByClassName(`down-${postId}`)[0].style.color =
-            '#999da5';
-        } else {
-          document.getElementsByClassName(`up-${postId}`)[0].style.color =
-            '#999da5';
-          document.getElementsByClassName(`down-${postId}`)[0].style.color =
-            '#ff4500';
-        }
-        sessionStorage.isVisited = 'false';
-
-        window.location.href = `/user/${user}`;
-      }
-    })
-    .catch(console.log);
-};
-
-// 3-3 Get posts
+// 3-2 Get posts
 const getPosts = () => {
   fetch(`/api/v1/user/${user}`, request)
     .then((res) => {

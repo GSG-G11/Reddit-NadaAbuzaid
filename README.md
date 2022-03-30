@@ -14,7 +14,7 @@
 <hr>
 
 ## ✧ Link
-Demo link in [heroku](https://nada-reddit.herokuapp.com/), feel free to check it 🤍 
+Demo link in [heroku](https://reddit-nadaabuzaid.herokuapp.com/), feel free to check it 🤍 
 
 <hr>
 

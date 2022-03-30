@@ -180,48 +180,6 @@ logoutBtn.addEventListener('click', () => {
     .catch(console.log);
 });
 
-// 7. Add votes to posts
-const votePosts = (voteType, postId) => {
-  const reqVote = {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-  };
-
-  fetch(`/api/v1/vote/${postId}/${voteType}`, reqVote)
-    .then((resp) => {
-      if (resp.status === 401) {
-        Swal.fire({
-          icon: 'error',
-          text: 'Kindly login to vote!',
-        });
-      } else if (resp.status === 200) {
-        if (voteType === 'up') {
-          document.getElementsByClassName(`up-${postId}`)[0].style.color =
-            '#ff4500';
-          document.getElementsByClassName(`down-${postId}`)[0].style.color =
-            '#999da5';
-        } else {
-          document.getElementsByClassName(`up-${postId}`)[0].style.color =
-            '#999da5';
-          document.getElementsByClassName(`down-${postId}`)[0].style.color =
-            '#ff4500';
-        }
-        sessionStorage.isVisited = 'false';
-        Swal.fire({
-          position: 'center',
-          icon: 'success',
-          title: 'Voted Successfully',
-          showConfirmButton: false,
-          timer: 2000,
-        });
-        setTimeout(() => {
-          window.location.href = `/posts/${postId}/show`;
-        }, 1500);
-      }
-    })
-    .catch(console.log);
-};
-
 // 8. Add Comment
 
 // 8-1 check comment

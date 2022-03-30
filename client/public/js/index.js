@@ -240,37 +240,6 @@ open.addEventListener('click', () => {
 closePosts.addEventListener('click', () => closeFun(modal));
 
 // 8. Add votes to posts
-const votePosts = (voteType, postId) => {
-  const reqVote = {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-  };
-
-  fetch(`/api/v1/vote/${postId}/${voteType}`, reqVote)
-    .then((resp) => {
-      if (resp.status === 401) {
-        Swal.fire({
-          icon: 'error',
-          text: 'Kindly login to vote!',
-        });
-      } else if (resp.status === 200) {
-        if (voteType === 'up') {
-          document.getElementsByClassName(`up-${postId}`)[0].style.color =
-            '#ff4500';
-          document.getElementsByClassName(`down-${postId}`)[0].style.color =
-            '#999da5';
-        } else {
-          document.getElementsByClassName(`up-${postId}`)[0].style.color =
-            '#999da5';
-          document.getElementsByClassName(`down-${postId}`)[0].style.color =
-            '#ff4500';
-        }
-        sessionStorage.isVisited = 'false';
-        window.location.href = '/';
-      }
-    })
-    .catch(console.log);
-};
 
 // 9. Add Post
 

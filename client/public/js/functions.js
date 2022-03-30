@@ -125,11 +125,16 @@ const handleDom = (parent, owner, title, content, postId, user) => {
   const up = document.createElement('i');
   up.className = `fas fa-arrow-alt-up arrow up-${postId}`;
   up.setAttribute('onclick', `votePosts('up', ${postId})`);
+  const numDiv = document.createElement('div');
 
-  const votesNum = document.createElement('p');
-  votesNum.className = 'votes-num';
-  // eslint-disable-next-line no-return-assign
-  getVotes(postId).then((count) => (votesNum.textContent = count));
+  getVotes(postId).then((count) => {
+    const votesNum = document.createElement('p');
+    votesNum.className = 'votes-num';
+    votesNum.id = `votesNum-${postId}`;
+    votesNum.textContent = count;
+    vote.appendChild(votesNum);
+    numDiv.appendChild(votesNum);
+  });
 
   const postDiv = document.createElement('div');
   postDiv.className = 'post-div';
@@ -191,7 +196,7 @@ const handleDom = (parent, owner, title, content, postId, user) => {
   postUser.appendChild(username);
 
   vote.appendChild(up);
-  vote.appendChild(votesNum);
+  vote.appendChild(numDiv);
   vote.appendChild(down);
 
   postDiv.appendChild(postContent);
@@ -218,10 +223,16 @@ const handlePostPage = (parent, owner, title, content, postId) => {
   up.className = `fas fa-arrow-alt-up arrow up-${postId}`;
   up.setAttribute('onclick', `votePosts('up', ${postId})`);
 
-  const votesNum = document.createElement('p');
-  votesNum.className = 'votes-num';
-  // eslint-disable-next-line no-return-assign
-  getVotes(postId).then((count) => (votesNum.textContent = count));
+  const numDiv = document.createElement('div');
+
+  getVotes(postId).then((count) => {
+    const votesNum = document.createElement('p');
+    votesNum.className = 'votes-num';
+    votesNum.id = `votesNum-${postId}`;
+    votesNum.textContent = count;
+    vote.appendChild(votesNum);
+    numDiv.appendChild(votesNum);
+  });
 
   const postDiv = document.createElement('div');
   postDiv.className = 'post-div';
@@ -276,7 +287,7 @@ const handlePostPage = (parent, owner, title, content, postId) => {
   postUser.appendChild(username);
 
   vote.appendChild(up);
-  vote.appendChild(votesNum);
+  vote.appendChild(numDiv);
   vote.appendChild(down);
 
   postDiv.appendChild(postContent);
@@ -315,4 +326,40 @@ const HandleCommentsDom = (parent, user, content) => {
   commentInfo.appendChild(username);
   commentInfo.appendChild(commentContent);
   parent.prepend(comment);
+};
+
+// 9- Add Votes
+const votePosts = (voteType, postId) => {
+  const reqVote = {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+  };
+
+  fetch(`/api/v1/vote/${postId}/${voteType}`, reqVote)
+    .then((resp) => {
+      if (resp.status === 401) {
+        Swal.fire({
+          icon: 'error',
+          text: 'Kindly, login to vote!',
+        });
+      } else if (resp.status === 200) {
+        if (voteType === 'up') {
+          document.getElementsByClassName(`up-${postId}`)[0].style.color =
+            '#ff4500';
+          document.getElementsByClassName(`down-${postId}`)[0].style.color =
+            '#999da5';
+        } else {
+          document.getElementsByClassName(`up-${postId}`)[0].style.color =
+            '#999da5';
+          document.getElementsByClassName(`down-${postId}`)[0].style.color =
+            '#ff4500';
+        }
+        sessionStorage.isVisited = 'false';
+        getVotes(postId).then((count) => {
+          const votesNum = document.getElementById(`votesNum-${postId}`);
+          votesNum.textContent = count;
+        });
+      }
+    })
+    .catch(console.log);
 };

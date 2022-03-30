@@ -209,8 +209,19 @@ const addComment = (postId) => {
         content: commentContent.value,
       }),
     };
-    fetch(`/api/v1/comment/${postId}`, addCommentReq).then((response) => {
-      if (response.status === 200) {
+    fetch(`/api/v1/comment/${postId}`, addCommentReq)
+      .then((response) => {
+        if (response.status === 401) {
+          Swal.fire({
+            icon: 'error',
+            text: 'Kindly, Login to comment!',
+          });
+        } else if (response.status === 201) {
+          return response.json();
+        }
+      })
+      .then(({ data }) => {
+        getComments(data.post_id);
         Swal.fire({
           position: 'center',
           icon: 'success',
@@ -218,16 +229,8 @@ const addComment = (postId) => {
           showConfirmButton: false,
           timer: 1500,
         });
-        setTimeout(() => {
-          window.location.href = `/posts/${postId}/show`;
-        }, 1500);
-      } else {
-        Swal.fire({
-          icon: 'error',
-          text: 'Kindly, Login to comment!',
-        });
-      }
-    });
+        commentContent.value = '';
+      });
   }
 };
 

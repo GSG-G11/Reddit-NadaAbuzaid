@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://d.top4top.io/p_22521ptn21.png">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Style Page -->
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/post.css">
+    <title>Reddit | Post</title>
+</head>
+
+<body>
+    <!-- 1. Start Header Section -->
+    <header class="header-section" id="header-section">
+        <!-- 1-1. Scroll Indicator -->
+        <div class="progress-container">
+            <div class="progress-bar" id="myBar"></div>
+        </div>
+
+        <!-- 1-2. Header Content -->
+        <div class="header">
+            <!-- 1-2-1 Logo Side -->
+            <div class="logo">
+                <a href="/"><img src="/images/logo-light.svg" alt="Logo Image" class="logo-img" /></a>
+            </div>
+
+            <!-- 1-2-2 User Side -->
+            <div class="center" id="user">
+                <img src="/images/logo.svg" alt="Logo" class="user-icon">
+                <a id="userLink">
+                    <p id="username"></p>
+                </a>
+                <i class="fas fa-sign-out" id="logoutBtn"></i>
+            </div>
+
+            <!-- 1-2-3 -->
+            <div class="buttons">
+                <button class="login-btn btn" id="loginBtn">Login</button>
+                <button class="join-btn btn" id="joinBtn">Join</button>
+            </div>
+
+        </div>
+    </header>
+    <!-- End Header Section -->
+
+    <!-- 2. Start Post Section -->
+    <main>
+        <div class="container">
+
+            <!-- 2-1 Posts Section -->
+            <section class="posts">
+                <!-- 2-1-1 Posts-->
+                <p class="section-header">Post</p>
+                <div class="post-container" id="post-container"></div>
+                <div class="comment-section">
+                    <div class="add-comment">
+                        <img src="/images/logo.svg" class="user-icon user-icon-comment add-comment-img">
+                        <form id="CommentsForm" novalidate>
+                            <label>Be happy to add your comment here</label>
+                            <textarea id="comment-content-input" rows="20" cols="30"
+                                placeholder="Enter the comment here" required></textarea>
+                            <p id="commentContentErr" class="error"></p>
+                            <i class="fas fa-exclamation-circle circle" ></i>
+                            <input id="addCommentBtn" type="submit" value="Add comment" />
+                        </form>
+                    </div>
+                    <div class="comments-container" id="comments-container"></div>
+                </div>
+        </div>
+        <!-- ./post-container -->
+        </section>
+
+    </main>
+    <!-- End Post Section -->
+
+    <!-- 3. Start Back To top Button -->
+    <div id="backToTopBtn" class="btn-scroll hide">
+        <i class="far fa-angle-up"></i>
+    </div>
+    <!-- End Back To top Button -->
+
+    <script src="/js/functions.js"></script>
+    <script src="/js/post.js"></script>
+</body>
+
+</html>

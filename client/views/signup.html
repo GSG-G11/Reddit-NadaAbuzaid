@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://d.top4top.io/p_22521ptn21.png">
+    <!-- Style Page -->
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Reddit | Sign up</title>
+</head>
+
+<body>
+    <!-- Start Signup Form Section -->
+    <div class="container signup show" id="container">
+        <img src="images/logoMain.svg" alt="logo" class="main-img">
+        <div class="text create-account">Create Account</div>
+        <form>
+            <div class="field">
+                <span class="fa fa-user"></span>
+                <input type="text" class="form-control" placeholder="Username" id="username" required>
+                <i class="fas fa-exclamation-circle circle"></i>
+            </div>
+            <p class="error" id="nameErr"></p>
+            <div class="field">
+                <span class="fas fa-envelope"></span>
+                <input type="email" class="form-control" placeholder="Email address" id="email" required>
+                <i class="fas fa-exclamation-circle circle"></i>
+            </div>
+            <p class="error" id="emailErr"></p>
+            <div class="field">
+                <span class="fa fa-lock"></span>
+                <input type="password" class="form-control password" placeholder="Password" id="password" required>
+                <i class="fas fa-eye-slash icon"></i>
+                <i class="fas fa-exclamation-circle circle"></i>
+            </div>
+            <p class="error" id="passErr"></p>
+            <button type="button" class="btn" id="signupBtn">Sign up</button>
+
+            <div class="new-account">
+                <p>Already have an account? click <a href="/signin" class="here" id="loginInstead">here</a></p>
+            </div>
+        </form>
+    </div>
+    <!-- End Signup Form Section -->
+    <script src="/js/functions.js"></script>
+    <script src="/js/signup.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>

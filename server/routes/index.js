@@ -1,10 +1,13 @@
 const router = require('express').Router();
 const viewsRouter = require('./viewRoutes');
 const apisRouter = require('./apiRoutes');
-const { clientError, serverError } = require('../controllers');
+const { clientError, serverError, getMainPage } = require('../controllers');
 
-router.use('/api/v1', apisRouter);
+router.get('/', getMainPage);
+
 router.use(viewsRouter);
+router.use('/api/v1', apisRouter);
+router.use('/404', clientError);
 
 router.use(clientError);
 router.use(serverError);

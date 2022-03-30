@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="https://d.top4top.io/p_22521ptn21.png" />
+    <!-- Alert Script -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Style Page -->
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/profile.css" />
+    <title>Reddit | User Page</title>
+</head>
+
+<body class="body">
+    <!-- 1. Start Header Section -->
+    <header class="header-section" id="header-section">
+        <!-- 1-1. Scroll Indicator -->
+        <div class="progress-container">
+            <div class="progress-bar" id="myBar"></div>
+        </div>
+
+        <!-- 1-2. Header Content -->
+        <div class="header">
+            <!-- 1-2-1 Logo Side -->
+            <div class="logo">
+                <a href="/"><img src="/images/logo-light.svg" alt="Logo Image" class="logo-img" /></a>
+            </div>
+
+            <!-- 1-2-2 User Side -->
+            <div class="center" id="user">
+                <img src="/images/logo.svg" alt="Logo" class="user-icon">
+                <a id="userLink">
+                    <p id="username"></p>
+                </a>
+                <i class="fas fa-sign-out" id="logoutBtn"></i>
+            </div>
+
+            <!-- 1-2-3 -->
+            <div class="buttons">
+                <button class="login-btn btn" id="loginBtn">Login</button>
+                <button class="join-btn btn" id="joinBtn">Join</button>
+            </div>
+
+        </div>
+    </header>
+    <!-- End Header Section -->
+
+    <!-- 2. Start Main Section -->
+    <main class="main center">
+        <div class="container">
+            <!-- 2-2 Sidebar Section -->
+            <section class="sidebar">
+                <div id="userInfo">
+                    <img src="/images/logo.svg" alt="Avatat" class="user-avatar">
+                    <div class="name">
+                        <p id="usernameProfile"></p>
+                    </div>
+                    <div class="email">
+                        <p id="useremailProfile"></p>
+                    </div>
+                    <button class="follow">Follow</button>
+                </div>
+            </section>
+
+            <!-- 2-1 Posts Section -->
+            <section class="posts">
+                <!-- 2-1-2 Posts-->
+                <p class="section-header">Posts</p>
+                <div class="post-container" id="post-container"></div>
+                <!-- ./post-container -->
+            </section>
+        </div>
+    </main>
+    <!-- End Main Section -->
+    <script src="/js/functions.js"></script>
+    <script src="/js/profile.js"></script>
+</body>
+
+</html>

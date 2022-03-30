@@ -1,0 +1,103 @@
+.container {
+  width: 100%;
+}
+
+.posts {
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.comments-container {
+  background-color: var(--white);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+.comment {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  justify-content: center;
+}
+
+.comment-info {
+  background-color: var(--background);
+  height: 120px;
+  width: 80%;
+  padding: 1rem;
+  margin-left: 10px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.comment-username {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.comment-content {
+  font-size: 0.8rem;
+  width: 90%;
+  text-align: justify;
+  line-height: 18px;
+}
+
+.user-icon-comment {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+/* ! Add Comment Section */
+.add-comment {
+  background-color: var(--white);
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 1rem 1rem 0 1rem;
+}
+
+#CommentsForm {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 8px 0 0 9px;
+}
+
+#CommentsForm label {
+  margin-bottom: 2px;
+  font-size: 0.9rem;
+  margin-left: 2px;
+  font-weight: 500;
+}
+
+#CommentsForm textarea {
+  width: 97%;
+}
+
+#addCommentBtn {
+  width: 113px;
+  height: 30px;
+  font-size: 14px;
+  margin-left: 575px;
+  margin-top: 10px;
+}
+
+.add-comment-img {
+  margin-top: 10px;
+}
+
+i.circle {
+  top: 323px;
+  right: 299px;
+  font-size: 17px;
+}
+
+.error {
+  font-size: 14px;
+}
